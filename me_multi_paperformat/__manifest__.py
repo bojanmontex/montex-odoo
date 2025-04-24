@@ -23,8 +23,8 @@ Technical details:
     'license': 'LGPL-3',
     'depends': ['base', 'web'],
     'data': [],
-    'images': [],
     'installable': True,
     'application': False,
     'auto_install': False,
+    'images': ['static/description/icon.png'],
 }

@@ -1,0 +1,101 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">ME Multi Paperformat</h2>
+        <h3 class="oe_slogan">Enhanced paperformat selection for multicompany environments</h3>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h4 class="oe_mt32">Problem Solved</h4>
+            <p>
+                In standard Odoo, when using multicompany environments, reports often use the paperformat of the main company 
+                (usually company ID 1) regardless of which company the user is currently logged into or which company the 
+                record belongs to. This can lead to inconsistent report layouts and incorrect paper sizes.
+            </p>
+            <p>
+                <strong>ME Multi Paperformat</strong> solves this problem by automatically selecting the correct paperformat 
+                based on the company of the record being printed, ensuring consistent and correct report layouts across all companies.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h4>Key Features</h4>
+            <div class="oe_span6">
+                <h5>Company-Aware Paperformat Selection</h5>
+                <p>
+                    Automatically selects the correct paperformat based on the company of the record being printed,
+                    ensuring consistent layouts across all your companies.
+                </p>
+            </div>
+            <div class="oe_span6">
+                <h5>Smart Detection</h5>
+                <p>
+                    Uses intelligent detection to identify the correct record and company when generating reports,
+                    whether viewed directly or downloaded.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h4 class="oe_mt32">Technical Implementation</h4>
+            <p>
+                The module extends the <code>get_paperformat</code> method in <code>ir.actions.report</code> to:
+            </p>
+            <ol>
+                <li>First check if the report has a specific paperformat defined</li>
+                <li>Extract the record ID from the URL path when viewing a report directly</li>
+                <li>Find the company associated with that record</li>
+                <li>Use the document layout paperformat for that company if available</li>
+                <li>Fall back to the company's default paperformat if needed</li>
+            </ol>
+            <p>
+                This implementation ensures that reports always use the correct paperformat without requiring any manual configuration
+                from users.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h4>Important Notes</h4>
+            <div class="alert alert-info" style="padding:8px;font-weight:300;font-size:20px;">
+                <i class="fa fa-info-circle"></i><b> Be aware of which company you are working with</b>
+            </div>
+            <ul>
+                <li><strong>Company Context:</strong> Always be aware of which company you are logged into when designing report templates</li>
+                <li><strong>Document Layouts:</strong> Configure document layouts for each company to ensure proper paperformat selection</li>
+                <li><strong>Testing:</strong> Test reports in different companies to ensure they use the correct paperformats</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h4 class="oe_mt32">Compatibility</h4>
+            <p>This module is compatible with Odoo 16.0 Community and Enterprise editions.</p>
+            
+            <h4>Support</h4>
+            <p>
+                For questions or support, please contact us at:
+                <a href="mailto:bojan.mijuskovic@montex.me">bojan.mijuskovic@montex.me</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_separator">
+</section>
